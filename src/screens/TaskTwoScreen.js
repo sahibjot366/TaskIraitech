@@ -6,14 +6,22 @@ const TaskTwoScreen = () => {
   const [ans, setAns] = useState("");
 
   function getAnswer(idx) {
-    const n1 = 2;
-    const n2 = 3;
     if (idx == 0) {
-      return n1;
+      return 2;
     }
-    if (idx == 1) {
-      return n2;
+    let diff1 = 1;
+    let diff2 = 7;
+    let ans = 2;
+    for (let i = 1; i <= idx; i++) {
+      if (i % 2 != 0) {
+        ans += diff1;
+        diff1 += 4;
+      } else {
+        ans += diff2;
+        diff2 += 4;
+      }
     }
+    return ans;
   }
   return (
     <View style={styles.parentView}>
